@@ -1,0 +1,724 @@
+fileFormatVersion: 2
+guid: fe6a8036d4544b84593f05c9168a49a6
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: ariel01
+    100002: ariel02
+    100004: ariels
+    100006: arm
+    100008: arm ctrl
+    100010: arm ctrl01
+    100012: arm lower
+    100014: arm lower 1
+    100016: arm middle
+    100018: arm middle01
+    100020: arm rotation ctrl
+    100022: arm rotation ctrl 1
+    100024: arm static
+    100026: arm top
+    100028: arm top01
+    100030: arm uper
+    100032: arm uper 1
+    100034: arm use only
+    100036: arm01
+    100038: autovents01
+    100040: autovents02
+    100042: back_thrusters01
+    100044: back_thrusters02
+    100046: back_thrusters03
+    100048: back_thrusters04
+    100050: body
+    100052: body 1
+    100054: body 2
+    100056: body 3
+    100058: body 4
+    100060: Bone26
+    100062: boost
+    100064: booster ctrl
+    100066: Box01
+    100068: bullet
+    100070: buttocks
+    100072: Camera01
+    100074: Camera01.Target
+    100076: clip
+    100078: ENERGY SHIED
+    100080: finger ctrl
+    100082: finger ctrl 1
+    100084: fingers
+    100086: fingers 1
+    100088: fingers 10
+    100090: fingers 11
+    100092: fingers 12
+    100094: fingers 13
+    100096: fingers 14
+    100098: fingers 15
+    100100: fingers 16
+    100102: fingers 17
+    100104: fingers 18
+    100106: fingers 19
+    100108: fingers 2
+    100110: fingers 20
+    100112: fingers 21
+    100114: fingers 22
+    100116: fingers 23
+    100118: fingers 24
+    100120: fingers 25
+    100122: fingers 26
+    100124: fingers 27
+    100126: fingers 28
+    100128: fingers 29
+    100130: fingers 3
+    100132: fingers 30
+    100134: fingers 31
+    100136: fingers 32
+    100138: fingers 33
+    100140: fingers 34
+    100142: fingers 35
+    100144: fingers 36
+    100146: fingers 37
+    100148: fingers 38
+    100150: fingers 4
+    100152: fingers 5
+    100154: fingers 6
+    100156: fingers 7
+    100158: fingers 8
+    100160: fingers 9
+    100162: fingers01
+    100164: fingers02
+    100166: fingers03
+    100168: fingers04
+    100170: fingers05
+    100172: fingers06
+    100174: fingers07
+    100176: fingers08
+    100178: fingers09
+    100180: fingers10
+    100182: fingers11
+    100184: fingers12
+    100186: fingers13
+    100188: fingers14
+    100190: fingers15
+    100192: fingers16
+    100194: fingers17
+    100196: fingers18
+    100198: fingers19
+    100200: fingers20
+    100202: fingers21
+    100204: fingers22
+    100206: fingers23
+    100208: fingers24
+    100210: fingers25
+    100212: fingers26
+    100214: fingers27
+    100216: fingers28
+    100218: fingers29
+    100220: fingers30
+    100222: foot
+    100224: foot 1
+    100226: foot 2
+    100228: Foot Control
+    100230: Foot Control01
+    100232: foot01
+    100234: footctrl
+    100236: footctrl01
+    100238: gun
+    100240: gun ctrl
+    100242: gun latch
+    100244: gun_mesh_guard
+    100246: gun_top
+    100248: hand
+    100250: hand 1
+    100252: hand 2
+    100254: hand01
+    100256: head
+    100258: head ctrl
+    100260: Heel Goal
+    100262: Heel Goal01
+    100264: IK Chain arm
+    100266: IK Chain arm 1
+    100268: ik chain fingers
+    100270: ik chain fingers 1
+    100272: ik chain fingers 2
+    100274: ik chain fingers 3
+    100276: ik chain fingers01
+    100278: ik chain fingers02
+    100280: ik chain fingers03
+    100282: ik chain fingers04
+    100284: IK Chain shouilder
+    100286: IK Chain shouilder01
+    100288: IK Chain side shoulder
+    100290: IK Chain side shoulder01
+    100292: IK Chain thumb
+    100294: IK Chain thumb 1
+    100296: IK Chain01
+    100298: IK Chain03
+    100300: IK Chain04
+    100302: IK Chain04 1
+    100304: IK Chain05
+    100306: IK Chain05 1
+    100308: IK Chain06
+    100310: IK Chain06 1
+    100312: knee ctrl
+    100314: knee ctrl 1
+    100316: knob_l
+    100318: knob_r
+    100320: left thrusts
+    100322: leg
+    100324: leg lower
+    100326: leg lower 1
+    100328: leg upper
+    100330: leg upper 1
+    100332: leg01
+    100334: legpad front
+    100336: legpad front 1
+    100338: legpad_rig
+    100340: legpad_rig01
+    100342: main thrusts
+    100344: //RootNode
+    100346: NGon03
+    100348: pads front
+    100350: pads front 1
+    100352: pads front 2
+    100354: pads side
+    100356: pads side 1
+    100358: pads side 2
+    100360: pads side 3
+    100362: Pedastal
+    100364: Point01
+    100366: Point01 1
+    100368: Point01 2
+    100370: Point01 3
+    100372: Point01 4
+    100374: Point02
+    100376: Point02 1
+    100378: Point03
+    100380: Point03 1
+    100382: Point04
+    100384: Point05
+    100386: Point06
+    100388: Point07
+    100390: Point08
+    100392: Point09
+    100394: Point10
+    100396: reload lever
+    100398: right thrusts
+    100400: Ripple01
+    100402: Ripple02
+    100404: SHEILD front
+    100406: shield bottom
+    100408: shield sides
+    100410: shield sides 1
+    100412: shield sides 2
+    100414: shield sides 3
+    100416: shoulder
+    100418: shoulder 1
+    100420: shoulder 2
+    100422: shoulder flaps
+    100424: shoulder flaps 1
+    100426: shoulder flaps 2
+    100428: shoulder flaps 3
+    100430: shoulder pad
+    100432: shoulder pad01
+    100434: shoulder01
+    100436: side pads
+    100438: Sun01
+    100440: Sun01.Target
+    100442: thigh
+    100444: thigh01
+    100446: toe
+    100448: toe 1
+    100450: Toe Goal
+    100452: Toe Goal01
+    100454: torso and above
+    100456: trigger
+    100458: turning thingy
+    100460: wrist
+    100462: wrist 1
+    100464: wrist 2
+    100466: wrist 3
+    400000: ariel01
+    400002: ariel02
+    400004: ariels
+    400006: arm
+    400008: arm ctrl
+    400010: arm ctrl01
+    400012: arm lower
+    400014: arm lower 1
+    400016: arm middle
+    400018: arm middle01
+    400020: arm rotation ctrl
+    400022: arm rotation ctrl 1
+    400024: arm static
+    400026: arm top
+    400028: arm top01
+    400030: arm uper
+    400032: arm uper 1
+    400034: arm use only
+    400036: arm01
+    400038: autovents01
+    400040: autovents02
+    400042: back_thrusters01
+    400044: back_thrusters02
+    400046: back_thrusters03
+    400048: back_thrusters04
+    400050: body
+    400052: body 1
+    400054: body 2
+    400056: body 3
+    400058: body 4
+    400060: Bone26
+    400062: boost
+    400064: booster ctrl
+    400066: Box01
+    400068: bullet
+    400070: buttocks
+    400072: Camera01
+    400074: Camera01.Target
+    400076: clip
+    400078: ENERGY SHIED
+    400080: finger ctrl
+    400082: finger ctrl 1
+    400084: fingers
+    400086: fingers 1
+    400088: fingers 10
+    400090: fingers 11
+    400092: fingers 12
+    400094: fingers 13
+    400096: fingers 14
+    400098: fingers 15
+    400100: fingers 16
+    400102: fingers 17
+    400104: fingers 18
+    400106: fingers 19
+    400108: fingers 2
+    400110: fingers 20
+    400112: fingers 21
+    400114: fingers 22
+    400116: fingers 23
+    400118: fingers 24
+    400120: fingers 25
+    400122: fingers 26
+    400124: fingers 27
+    400126: fingers 28
+    400128: fingers 29
+    400130: fingers 3
+    400132: fingers 30
+    400134: fingers 31
+    400136: fingers 32
+    400138: fingers 33
+    400140: fingers 34
+    400142: fingers 35
+    400144: fingers 36
+    400146: fingers 37
+    400148: fingers 38
+    400150: fingers 4
+    400152: fingers 5
+    400154: fingers 6
+    400156: fingers 7
+    400158: fingers 8
+    400160: fingers 9
+    400162: fingers01
+    400164: fingers02
+    400166: fingers03
+    400168: fingers04
+    400170: fingers05
+    400172: fingers06
+    400174: fingers07
+    400176: fingers08
+    400178: fingers09
+    400180: fingers10
+    400182: fingers11
+    400184: fingers12
+    400186: fingers13
+    400188: fingers14
+    400190: fingers15
+    400192: fingers16
+    400194: fingers17
+    400196: fingers18
+    400198: fingers19
+    400200: fingers20
+    400202: fingers21
+    400204: fingers22
+    400206: fingers23
+    400208: fingers24
+    400210: fingers25
+    400212: fingers26
+    400214: fingers27
+    400216: fingers28
+    400218: fingers29
+    400220: fingers30
+    400222: foot
+    400224: foot 1
+    400226: foot 2
+    400228: Foot Control
+    400230: Foot Control01
+    400232: foot01
+    400234: footctrl
+    400236: footctrl01
+    400238: gun
+    400240: gun ctrl
+    400242: gun latch
+    400244: gun_mesh_guard
+    400246: gun_top
+    400248: hand
+    400250: hand 1
+    400252: hand 2
+    400254: hand01
+    400256: head
+    400258: head ctrl
+    400260: Heel Goal
+    400262: Heel Goal01
+    400264: IK Chain arm
+    400266: IK Chain arm 1
+    400268: ik chain fingers
+    400270: ik chain fingers 1
+    400272: ik chain fingers 2
+    400274: ik chain fingers 3
+    400276: ik chain fingers01
+    400278: ik chain fingers02
+    400280: ik chain fingers03
+    400282: ik chain fingers04
+    400284: IK Chain shouilder
+    400286: IK Chain shouilder01
+    400288: IK Chain side shoulder
+    400290: IK Chain side shoulder01
+    400292: IK Chain thumb
+    400294: IK Chain thumb 1
+    400296: IK Chain01
+    400298: IK Chain03
+    400300: IK Chain04
+    400302: IK Chain04 1
+    400304: IK Chain05
+    400306: IK Chain05 1
+    400308: IK Chain06
+    400310: IK Chain06 1
+    400312: knee ctrl
+    400314: knee ctrl 1
+    400316: knob_l
+    400318: knob_r
+    400320: left thrusts
+    400322: leg
+    400324: leg lower
+    400326: leg lower 1
+    400328: leg upper
+    400330: leg upper 1
+    400332: leg01
+    400334: legpad front
+    400336: legpad front 1
+    400338: legpad_rig
+    400340: legpad_rig01
+    400342: main thrusts
+    400344: //RootNode
+    400346: NGon03
+    400348: pads front
+    400350: pads front 1
+    400352: pads front 2
+    400354: pads side
+    400356: pads side 1
+    400358: pads side 2
+    400360: pads side 3
+    400362: Pedastal
+    400364: Point01
+    400366: Point01 1
+    400368: Point01 2
+    400370: Point01 3
+    400372: Point01 4
+    400374: Point02
+    400376: Point02 1
+    400378: Point03
+    400380: Point03 1
+    400382: Point04
+    400384: Point05
+    400386: Point06
+    400388: Point07
+    400390: Point08
+    400392: Point09
+    400394: Point10
+    400396: reload lever
+    400398: right thrusts
+    400400: Ripple01
+    400402: Ripple02
+    400404: SHEILD front
+    400406: shield bottom
+    400408: shield sides
+    400410: shield sides 1
+    400412: shield sides 2
+    400414: shield sides 3
+    400416: shoulder
+    400418: shoulder 1
+    400420: shoulder 2
+    400422: shoulder flaps
+    400424: shoulder flaps 1
+    400426: shoulder flaps 2
+    400428: shoulder flaps 3
+    400430: shoulder pad
+    400432: shoulder pad01
+    400434: shoulder01
+    400436: side pads
+    400438: Sun01
+    400440: Sun01.Target
+    400442: thigh
+    400444: thigh01
+    400446: toe
+    400448: toe 1
+    400450: Toe Goal
+    400452: Toe Goal01
+    400454: torso and above
+    400456: trigger
+    400458: turning thingy
+    400460: wrist
+    400462: wrist 1
+    400464: wrist 2
+    400466: wrist 3
+    2300000: ariel01
+    2300002: ariel02
+    2300004: autovents01
+    2300006: autovents02
+    2300008: back_thrusters01
+    2300010: back_thrusters02
+    2300012: back_thrusters03
+    2300014: back_thrusters04
+    2300016: Box01
+    2300018: bullet
+    2300020: buttocks
+    2300022: clip
+    2300024: ENERGY SHIED
+    2300026: gun latch
+    2300028: gun_mesh_guard
+    2300030: gun_top
+    2300032: knob_l
+    2300034: knob_r
+    2300036: left thrusts
+    2300038: main thrusts
+    2300040: reload lever
+    2300042: right thrusts
+    2300044: SHEILD front
+    2300046: shield bottom
+    2300048: shield sides
+    2300050: shield sides 1
+    2300052: shield sides 2
+    2300054: shield sides 3
+    2300056: trigger
+    3300000: ariel01
+    3300002: ariel02
+    3300004: autovents01
+    3300006: autovents02
+    3300008: back_thrusters01
+    3300010: back_thrusters02
+    3300012: back_thrusters03
+    3300014: back_thrusters04
+    3300016: Box01
+    3300018: bullet
+    3300020: buttocks
+    3300022: clip
+    3300024: ENERGY SHIED
+    3300026: gun latch
+    3300028: gun_mesh_guard
+    3300030: gun_top
+    3300032: knob_l
+    3300034: knob_r
+    3300036: left thrusts
+    3300038: main thrusts
+    3300040: reload lever
+    3300042: right thrusts
+    3300044: SHEILD front
+    3300046: shield bottom
+    3300048: shield sides
+    3300050: shield sides 1
+    3300052: shield sides 2
+    3300054: shield sides 3
+    3300056: trigger
+    4300000: leg
+    4300002: foot
+    4300004: shoulder
+    4300006: shoulder pad
+    4300008: arm top
+    4300010: body
+    4300012: fingers04
+    4300014: fingers08
+    4300016: fingers11
+    4300018: fingers03
+    4300020: fingers13
+    4300022: fingers14
+    4300024: fingers12
+    4300026: fingers05
+    4300028: fingers10
+    4300030: hand
+    4300032: fingers07
+    4300034: fingers06
+    4300036: fingers09
+    4300038: fingers02
+    4300040: fingers01
+    4300042: fingers15
+    4300044: arm middle
+    4300046: arm
+    4300048: leg01
+    4300050: foot01
+    4300052: thigh01
+    4300054: head
+    4300056: ariel02
+    4300058: ariel01
+    4300060: knob_l
+    4300062: knob_r
+    4300064: autovents02
+    4300066: autovents01
+    4300068: buttocks
+    4300070: ENERGY SHIED
+    4300072: SHEILD front
+    4300074: shield sides
+    4300076: shield sides
+    4300078: shield sides
+    4300080: shield sides
+    4300082: shield bottom
+    4300084: Box01
+    4300086: trigger
+    4300088: gun_top
+    4300090: reload lever
+    4300092: gun_mesh_guard
+    4300094: gun latch
+    4300096: clip
+    4300098: bullet
+    4300100: back_thrusters01
+    4300102: back_thrusters02
+    4300104: main thrusts
+    4300106: back_thrusters03
+    4300108: right thrusts
+    4300110: back_thrusters04
+    4300112: left thrusts
+    4300114: thigh
+    4300116: legpad front
+    4300118: legpad front
+    4300120: fingers16
+    4300122: fingers17
+    4300124: fingers18
+    4300126: fingers19
+    4300128: fingers20
+    4300130: fingers21
+    4300132: fingers22
+    4300134: hand01
+    4300136: fingers23
+    4300138: fingers24
+    4300140: fingers25
+    4300142: fingers26
+    4300144: arm01
+    4300146: arm top01
+    4300148: arm middle01
+    4300150: fingers27
+    4300152: fingers28
+    4300154: fingers29
+    4300156: fingers30
+    4300158: legpad_rig
+    4300160: legpad_rig01
+    4300162: shoulder01
+    4300164: shoulder pad01
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: arm
+    13700002: arm middle
+    13700004: arm middle01
+    13700006: arm top
+    13700008: arm top01
+    13700010: arm01
+    13700012: body
+    13700014: fingers01
+    13700016: fingers02
+    13700018: fingers03
+    13700020: fingers04
+    13700022: fingers05
+    13700024: fingers06
+    13700026: fingers07
+    13700028: fingers08
+    13700030: fingers09
+    13700032: fingers10
+    13700034: fingers11
+    13700036: fingers12
+    13700038: fingers13
+    13700040: fingers14
+    13700042: fingers15
+    13700044: fingers16
+    13700046: fingers17
+    13700048: fingers18
+    13700050: fingers19
+    13700052: fingers20
+    13700054: fingers21
+    13700056: fingers22
+    13700058: fingers23
+    13700060: fingers24
+    13700062: fingers25
+    13700064: fingers26
+    13700066: fingers27
+    13700068: fingers28
+    13700070: fingers29
+    13700072: fingers30
+    13700074: foot
+    13700076: foot01
+    13700078: hand
+    13700080: hand01
+    13700082: head
+    13700084: leg
+    13700086: leg01
+    13700088: legpad front
+    13700090: legpad front 1
+    13700092: legpad_rig
+    13700094: legpad_rig01
+    13700096: shoulder 1
+    13700098: shoulder pad
+    13700100: shoulder pad01
+    13700102: shoulder01
+    13700104: thigh
+    13700106: thigh01
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
