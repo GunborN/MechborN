@@ -59,7 +59,9 @@ public class swordOrbit : MonoBehaviour {
 			{
 				if(Input.GetKeyDown(KeyCode.V))
 				{
+
 					StartCoroutine(SwingSwordLeft());
+					sword.GetComponent<BoxCollider>().enabled = true;
 					mech2.AddForce((targetObject.transform.position - mech.position).normalized * forceAmount * Time.smoothDeltaTime);
 					Instantiate(warpSystem,feet.transform.position,Quaternion.identity);
 					timer = Time.time + swordCooldown;
@@ -68,6 +70,7 @@ public class swordOrbit : MonoBehaviour {
 				if(Input.GetKeyDown(KeyCode.V))
 				{
 					StartCoroutine(SwingSwordRight());
+					sword.GetComponent<BoxCollider>().enabled = true;
 					mech2.AddForce((targetObject.transform.position - mech.position).normalized * forceAmount * Time.smoothDeltaTime);
 					Instantiate(warpSystem,feet.transform.position,transform.rotation);
 					timer = Time.time + swordCooldown;
@@ -91,6 +94,7 @@ public class swordOrbit : MonoBehaviour {
 
 		swordAnimator.SetBool ("Swing", false);
 		gundam_sword.SetBool ("Swing", false);
+		sword.GetComponent<BoxCollider> ().enabled = false;
 		trail.SetActive (false);
 	}
 
@@ -104,6 +108,7 @@ public class swordOrbit : MonoBehaviour {
 		
 		swordAnimator.SetBool ("SwingRight", false);
 		gundam_sword.SetBool ("Swing", false);
+		sword.GetComponent<BoxCollider> ().enabled = false;
 		trail.SetActive (false);
 	}
 }

@@ -36,13 +36,51 @@ public class damageDetection : MonoBehaviour {
 		if(obj.name == "Explosion")
 		{
 			Debug.Log(obj.name);
-			obj.GetComponent<Collider>().enabled = false;
+			obj.GetComponent<SphereCollider>().enabled = false;
 
 			if(obj.GetComponent<Shot1Damage>())
 			{
-				if((healthAmount - obj.GetComponent<Shot1Damage>().damage) <= 0f)
+				float dmgAmount1 = obj.GetComponent<Shot1Damage>().damage;
+				if((healthAmount - dmgAmount1) <= 0f)
 				{
 					DestroyThis ();
+				}else
+				{
+					healthAmount -= dmgAmount1;
+				}
+			}else if(obj.GetComponent<Shot2Damage>())
+			{
+				float dmgAmount2 = obj.GetComponent<Shot2Damage>().damage;
+				if((healthAmount - dmgAmount2) <= 0f)
+				{
+					DestroyThis ();
+				}else
+				{
+					healthAmount -= dmgAmount2;
+				}
+			}else if(obj.GetComponent<BlueParticleDamage>())
+			{
+				float dmgAmount3 = obj.GetComponent<BlueParticleDamage>().damage;
+				if((healthAmount - dmgAmount3) <= 0f)
+				{
+					DestroyThis ();
+				}else
+				{
+					healthAmount -= dmgAmount3;
+				}
+			}
+		}else if(obj.name == "gundam_sword")
+		{
+			if(obj.GetComponent<SwordDamage>())
+			{
+				Debug.Log("SWORD HIT ME!!!");
+				float dmgAmount1 = obj.GetComponent<SwordDamage>().damage;
+				if((healthAmount - dmgAmount1) <= 0f)
+				{
+					DestroyThis ();
+				}else
+				{
+					healthAmount -= dmgAmount1;
 				}
 			}
 		}
