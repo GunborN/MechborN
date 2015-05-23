@@ -24,18 +24,18 @@ public class Actions : MonoBehaviour {
 	{
 		//MELEE //////////////////////////
 		//////////////////////////////////
-		if(Input.GetKey(KeyCode.V) && (meleeTimer <= Time.time))
-		{
-			melee.SetActive(true);
-			meleeTimer = Time.time + MeleeCooldown;
-			meleeCheck = true;
-		}
-
-		if(meleeCheck && meleeTimer <= Time.time)
-		{
-			meleeCheck = false;
-			melee.SetActive(false);
-		}
+//		if(Input.GetKey(KeyCode.V) && (meleeTimer <= Time.time))
+//		{
+//			melee.SetActive(true);
+//			meleeTimer = Time.time + MeleeCooldown;
+//			meleeCheck = true;
+//		}
+//
+//		if(meleeCheck && meleeTimer <= Time.time)
+//		{
+//			meleeCheck = false;
+//			melee.SetActive(false);
+//		}
 		//////////////////////////////////
 		//////////////////////////////////
 	}
