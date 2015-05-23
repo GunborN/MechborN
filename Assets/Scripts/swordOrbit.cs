@@ -24,6 +24,9 @@ public class swordOrbit : MonoBehaviour {
 	public float swordCooldown = 3.0f;
 	private float timer;
 
+	public GameObject warpSystem;
+	private GameObject feet;
+
 	void Start () 
 	{
 		timer = Time.time;
@@ -40,6 +43,8 @@ public class swordOrbit : MonoBehaviour {
 			}
 		}
 		sword = transform.Find ("gundam_sword").gameObject;
+
+		feet = GameObject.FindGameObjectWithTag ("FEET");
 	}
 
 
@@ -56,6 +61,7 @@ public class swordOrbit : MonoBehaviour {
 				{
 					StartCoroutine(SwingSwordLeft());
 					mech2.AddForce((targetObject.transform.position - mech.position).normalized * forceAmount * Time.smoothDeltaTime);
+					Instantiate(warpSystem,feet.transform.position,Quaternion.identity);
 					timer = Time.time + swordCooldown;
 				}
 			}else{
@@ -63,14 +69,10 @@ public class swordOrbit : MonoBehaviour {
 				{
 					StartCoroutine(SwingSwordRight());
 					mech2.AddForce((targetObject.transform.position - mech.position).normalized * forceAmount * Time.smoothDeltaTime);
+					Instantiate(warpSystem,feet.transform.position,transform.rotation);
 					timer = Time.time + swordCooldown;
 				}
 			}
-//			if(Input.GetKeyDown(KeyCode.V))
-//			{
-//				mech2.AddForce((targetObject.transform.position - mech.position).normalized * forceAmount * Time.smoothDeltaTime);
-//				timer = Time.time + swordCooldown;
-//			}
 		}
 	}
 	
