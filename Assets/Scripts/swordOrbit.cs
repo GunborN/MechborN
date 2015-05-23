@@ -31,8 +31,6 @@ public class swordOrbit : MonoBehaviour {
 		animators2 = GetComponentsInChildren<Animator> ();
 		foreach(Animator thisAnim2 in animators2)
 		{
-			Debug.Log (thisAnim2.name);
-
 			if(thisAnim2.name == "swordOrbit")
 			{
 				swordAnimator = thisAnim2;
@@ -56,8 +54,6 @@ public class swordOrbit : MonoBehaviour {
 			{
 				if(Input.GetKeyDown(KeyCode.V))
 				{
-					Debug.Log("SHOULD HAVE SHOT FORWARD");
-
 					StartCoroutine(SwingSwordLeft());
 					mech2.AddForce((targetObject.transform.position - mech.position).normalized * forceAmount * Time.smoothDeltaTime);
 					timer = Time.time + swordCooldown;
@@ -65,8 +61,6 @@ public class swordOrbit : MonoBehaviour {
 			}else{
 				if(Input.GetKeyDown(KeyCode.V))
 				{
-					Debug.Log("SHOULD HAVE SHOT FORWARD");
-
 					StartCoroutine(SwingSwordRight());
 					mech2.AddForce((targetObject.transform.position - mech.position).normalized * forceAmount * Time.smoothDeltaTime);
 					timer = Time.time + swordCooldown;

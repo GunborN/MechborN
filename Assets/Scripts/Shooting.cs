@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Shooting : MonoBehaviour {
 
+	public bool isPlayer;
+
 	public GameObject shot1;
 	public bool useShot1;
 
@@ -51,81 +53,126 @@ public class Shooting : MonoBehaviour {
 	public GameObject whirlingShot;
 	public bool useWhirlingShot;
 
+	private bool shooting;
 
-	// Use this for initialization
-	void Start () {
-		
+
+	void Start ()
+	{
+		shooting = false;
+		if(isPlayer == true)
+		{
+			useShot1 = true;
+		}
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		if(Input.GetMouseButton(0))
+	void Update () 
+	{
+		if(isPlayer)
 		{
-			if(useShot1)
+			if (Input.GetKeyDown (KeyCode.Alpha1))
 			{
-				GameObject shot = Instantiate(shot1,transform.position,transform.rotation) as GameObject;
-				shot.GetComponent<EffectSettings>().Target = GameObject.FindGameObjectWithTag("Target2");
-			}else if(useShot2)
+				useShot1 = true;
+				useShot2 = false;
+				useShot3 = false;
+			}
+			if (Input.GetKeyDown(KeyCode.Alpha2))
 			{
-				GameObject shot = Instantiate(shot2,transform.position,transform.rotation) as GameObject;
-				shot.GetComponent<EffectSettings>().Target = GameObject.FindGameObjectWithTag("Target2");
-			}else if(useShot3)
+				useShot2 = true;
+				useShot1 = false;
+				useShot3 = false;
+			}
+			if (Input.GetKeyDown(KeyCode.Alpha3))
 			{
-				GameObject shot = Instantiate(shot3,transform.position,transform.rotation) as GameObject;
-				shot.GetComponent<EffectSettings>().Target = GameObject.FindGameObjectWithTag("Target2");
-			}else if(useBlueFire2)
-			{
-				GameObject shot = Instantiate(blueFire2,transform.position,transform.rotation) as GameObject;
-				shot.GetComponent<EffectSettings>().Target = GameObject.FindGameObjectWithTag("Target2");
-			}else if(useBlueShot)
-			{
-				GameObject shot = Instantiate(blueShot,transform.position,transform.rotation) as GameObject;
-				shot.GetComponent<EffectSettings>().Target = GameObject.FindGameObjectWithTag("Target2");
-			}else if(useElecBall)
-			{
-				GameObject shot = Instantiate(elecBall,transform.position,transform.rotation) as GameObject;
-				shot.GetComponent<EffectSettings>().Target = GameObject.FindGameObjectWithTag("Target2");
-			}else if(useElecBeam)
-			{
-				GameObject shot = Instantiate(elecBeam,transform.position,transform.rotation) as GameObject;
-				shot.GetComponent<EffectSettings>().Target = GameObject.FindGameObjectWithTag("Target2");
-			}else if(useFireBeam)
-			{
-				GameObject shot = Instantiate(fireBeam,transform.position,transform.rotation) as GameObject;
-				shot.GetComponent<EffectSettings>().Target = GameObject.FindGameObjectWithTag("Target2");
-			}else if(useFireBolt)
-			{
-				GameObject shot = Instantiate(fireBolt,transform.position,transform.rotation) as GameObject;
-				shot.GetComponent<EffectSettings>().Target = GameObject.FindGameObjectWithTag("Target2");
-			}else if(useFrostBolt)
-			{
-				GameObject shot = Instantiate(frostBolt,transform.position,transform.rotation) as GameObject;
-				shot.GetComponent<EffectSettings>().Target = GameObject.FindGameObjectWithTag("Target2");
-			}else if(useGreenFireball)
-			{
-				GameObject shot = Instantiate(greenFireball,transform.position,transform.rotation) as GameObject;
-				shot.GetComponent<EffectSettings>().Target = GameObject.FindGameObjectWithTag("Target2");
-			}else if(useGreenImpactWave)
-			{
-				GameObject shot = Instantiate(greenImpactWave,transform.position,transform.rotation) as GameObject;
-				shot.GetComponent<EffectSettings>().Target = GameObject.FindGameObjectWithTag("Target2");
-			}else if(useImpactWave)
-			{
-				GameObject shot = Instantiate(impactWave,transform.position,transform.rotation) as GameObject;
-				shot.GetComponent<EffectSettings>().Target = GameObject.FindGameObjectWithTag("Target2");
-			}else if(useQueueShotTrail)
-			{
-				GameObject shot = Instantiate(queueShotTrail,transform.position,transform.rotation) as GameObject;
-				shot.GetComponent<EffectSettings>().Target = GameObject.FindGameObjectWithTag("Target2");
-			}else if(useRocket2)
-			{
-				GameObject shot = Instantiate(rocket2,transform.position,transform.rotation) as GameObject;
-				shot.GetComponent<EffectSettings>().Target = GameObject.FindGameObjectWithTag("Target2");
-			}else if(useWhirlingShot)
-			{
-				GameObject shot = Instantiate(whirlingShot,transform.position,transform.rotation) as GameObject;
-				shot.GetComponent<EffectSettings>().Target = GameObject.FindGameObjectWithTag("Target2");
+				useShot3 = true;
+				useShot2 = false;
+				useShot1 = false;
 			}
 		}
+
+		if(Input.GetMouseButton(0))
+		{
+			if(useShot1 && !shooting)
+			{
+				StartCoroutine(theShootingShot1 (shot1));
+			}else if(useShot2 && !shooting)
+			{
+				StartCoroutine(theShootingShot2 (shot2));
+			}else if(useShot3 && !shooting)
+			{
+				StartCoroutine(theShootingShot3 (blueShot));
+			}else if(useBlueFire2)
+			{
+				//GameObject shot = Instantiate(blueFire2,transform.position,transform.rotation) as GameObject;
+				//shot.GetComponent<EffectSettings>().Target = GameObject.FindGameObjectWithTag("Target2");
+			}else if(useBlueShot)
+			{
+				//GameObject shot = Instantiate(blueShot,transform.position,transform.rotation) as GameObject;
+				//shot.GetComponent<EffectSettings>().Target = GameObject.FindGameObjectWithTag("Target2");
+			}else if(useElecBall)
+			{
+				//GameObject shot = Instantiate(elecBall,transform.position,transform.rotation) as GameObject;
+				//shot.GetComponent<EffectSettings>().Target = GameObject.FindGameObjectWithTag("Target2");
+			}else if(useElecBeam)
+			{
+				//GameObject shot = Instantiate(elecBeam,transform.position,transform.rotation) as GameObject;
+				//shot.GetComponent<EffectSettings>().Target = GameObject.FindGameObjectWithTag("Target2");
+			}else if(useFireBeam)
+			{
+				//GameObject shot = Instantiate(fireBeam,transform.position,transform.rotation) as GameObject;
+				//shot.GetComponent<EffectSettings>().Target = GameObject.FindGameObjectWithTag("Target2");
+			}else if(useFireBolt)
+			{
+				//GameObject shot = Instantiate(fireBolt,transform.position,transform.rotation) as GameObject;
+				//shot.GetComponent<EffectSettings>().Target = GameObject.FindGameObjectWithTag("Target2");
+			}else if(useFrostBolt)
+			{
+				//GameObject shot = Instantiate(frostBolt,transform.position,transform.rotation) as GameObject;
+				//shot.GetComponent<EffectSettings>().Target = GameObject.FindGameObjectWithTag("Target2");
+			}else if(useGreenFireball)
+			{
+				//GameObject shot = Instantiate(greenFireball,transform.position,transform.rotation) as GameObject;
+				//shot.GetComponent<EffectSettings>().Target = GameObject.FindGameObjectWithTag("Target2");
+			}else if(useGreenImpactWave)
+			{
+				//GameObject shot = Instantiate(greenImpactWave,transform.position,transform.rotation) as GameObject;
+				//shot.GetComponent<EffectSettings>().Target = GameObject.FindGameObjectWithTag("Target2");
+			}else if(useImpactWave)
+			{
+				//GameObject shot = Instantiate(impactWave,transform.position,transform.rotation) as GameObject;
+				//shot.GetComponent<EffectSettings>().Target = GameObject.FindGameObjectWithTag("Target2");
+			}else if(useQueueShotTrail)
+			{
+				//GameObject shot = Instantiate(queueShotTrail,transform.position,transform.rotation) as GameObject;
+				//shot.GetComponent<EffectSettings>().Target = GameObject.FindGameObjectWithTag("Target2");
+			}else if(useRocket2)
+			{
+				//StartCoroutine(theShooting (rocket2));
+			}
+		}
+	}
+
+	IEnumerator theShootingShot1(GameObject shotName)
+	{
+		shooting = true;
+		GameObject shot = Instantiate(shotName,transform.position,transform.rotation) as GameObject;
+		shot.GetComponent<EffectSettings>().Target = GameObject.FindGameObjectWithTag("Target2");
+		yield return new WaitForSeconds(.5f);
+		shooting = false;
+	}
+	IEnumerator theShootingShot2(GameObject shotName)
+	{
+		shooting = true;
+		GameObject shot = Instantiate(shotName,transform.position,transform.rotation) as GameObject;
+		shot.GetComponent<EffectSettings>().Target = GameObject.FindGameObjectWithTag("Target2");
+		yield return new WaitForSeconds(.1f);
+		shooting = false;
+	}
+	IEnumerator theShootingShot3(GameObject shotName)
+	{
+		shooting = true;
+		GameObject shot = Instantiate(shotName,transform.position,transform.rotation) as GameObject;
+		shot.GetComponent<EffectSettings>().Target = GameObject.FindGameObjectWithTag("Target2");
+		yield return new WaitForSeconds(1f);
+		shooting = false;
 	}
 }
