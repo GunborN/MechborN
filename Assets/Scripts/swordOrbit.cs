@@ -11,6 +11,8 @@ public class swordOrbit : MonoBehaviour {
 	private Animator swordAnimator;
 	private Animator gundam_sword;
 
+	public GameObject trail;
+
 
 	void Start () 
 	{
@@ -49,14 +51,15 @@ public class swordOrbit : MonoBehaviour {
 
 	IEnumerator SwingSword()
 	{   
+		trail.SetActive (true);
 		swordAnimator.SetBool ("Swing", true);
 		gundam_sword.SetBool ("Swing", true);
-
 
 		yield return new WaitForSeconds(1f);
 
 		swordAnimator.SetBool ("Swing", false);
 		gundam_sword.SetBool ("Swing", false);
+		trail.SetActive (false);
 
 	}
 }
