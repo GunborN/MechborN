@@ -30,7 +30,8 @@ public class Flee : MonoBehaviour
 		}
 
         transform.position = newPosition;
-		transform.position = new Vector3(newPosition.x,newPosition.y,0.0f);
+		transform.position = new Vector3(newPosition.x,newPosition.y,2.0f);
+		transform.LookAt (targetPosition);
 
 
 

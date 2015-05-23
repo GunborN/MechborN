@@ -26,34 +26,24 @@ public class detectPlayer : MonoBehaviour {
 	{
 		if (obj.tag == "Player" && !buffer)
 		{
-			Debug.Log ("PLAYER ENTERED");
 			StartCoroutine(bufferTime ());
 			transform.GetComponentInParent<Flee>().dontFlee = false;
-
-			//transform.GetComponentInParent<Seek>().enabled = false;
 		}
 	}
 	void OnTriggerExit(Collider obj)
 	{
 		if(obj.tag == "Player" && !buffer)
 		{
-
-			Debug.Log ("PLAYER EXITED");
 			StartCoroutine(bufferTime ());
 			transform.GetComponentInParent<Flee>().dontFlee = true;
-
-			//transform.GetComponentInParent<Seek>().enabled = true;
 		}
 	}
 	void OnTriggerStay(Collider obj)
 	{
 		if (obj.tag == "Player" && !buffer)
 		{
-			Debug.Log ("PLAYER ENTERED");
 			StartCoroutine(bufferTime ());
 			transform.GetComponentInParent<Flee>().dontFlee = false;
-			
-			//transform.GetComponentInParent<Seek>().enabled = false;
 		}
 	}
 
