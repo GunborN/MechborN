@@ -32,15 +32,34 @@ public class Flee : MonoBehaviour
         transform.position = newPosition;
 		transform.position = new Vector3(newPosition.x,newPosition.y,2.0f);
 		transform.LookAt (targetPosition);
-
-
-
-//        if(    transform.position.y<=-8f 
-//            || transform.position.y >= 8f 
-//            || transform.position.x <= -15f
-//            || transform.position.x >= 7f)
-//        {
-//            transform.position = Vector3.zero;
-//        }
     }
+//	private Vector3 Separation (GameObject boid)
+//	{
+//		BoidInfo boidInfo = boid.GetComponent<BoidInfo> (); //current boid info
+//		
+//		Vector3 displacement = Vector3.zero;
+//		
+//		foreach (GameObject b in _zombieList)
+//		{
+//			
+//			BoidInfo bInfo = b.GetComponent<BoidInfo> (); //neighbor
+//			
+//			if (b != boid) 
+//			{
+//				//if the distance between the current boid and his neighbor
+//				//is less than 10 they are too close and must be seperated
+//				
+//				if (Vector3.Distance (bInfo.Position, boidInfo.Position) < _separationRadius) 
+//				{		
+//					//calculate a displacement to move them apart
+//					//the displacement will result in a vector
+//					//that when added to the original velocity vector will
+//					//move them away from each other
+//					displacement = displacement - (bInfo.Position - boidInfo.Position);			
+//				}
+//			}
+//		}
+//		
+//		return displacement;
+//	}
 }
