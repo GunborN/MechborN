@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Shot1Damage : MonoBehaviour {
 
-	public float damage = 35f;
+	public float damage = 50f;
 
 	void Start () 
 	{

@@ -4,6 +4,7 @@ using System.Collections;
 public class damageDetection : MonoBehaviour {
 
 	public float healthAmount;
+	public GameObject theExplosion;
 
 	void Start () 
 	{
@@ -17,10 +18,10 @@ public class damageDetection : MonoBehaviour {
 
 	void OnCollisionEnter(Collision obj)
 	{
-		Debug.Log (obj.gameObject.name);
+		//Debug.Log (obj.gameObject.name);
 		if(obj.gameObject.layer == LayerMask.NameToLayer("Shield"))
 		{
-			Debug.Log ("HIT SHIELD!!!***");
+			//Debug.Log ("HIT SHIELD!!!***");
 			return;
 		}else
 		{
@@ -33,54 +34,57 @@ public class damageDetection : MonoBehaviour {
 
 	void OnTriggerEnter(Collider obj)
 	{
-		if(obj.name == "Explosion")
+		if(LayerMask.LayerToName(this.gameObject.layer) != "Detector")
 		{
-			Debug.Log(obj.name);
-			obj.GetComponent<SphereCollider>().enabled = false;
+			if(obj.name == "Explosion")
+			{
+				//Debug.Log(obj.name);
+				obj.GetComponent<SphereCollider>().enabled = false;
 
-			if(obj.GetComponent<Shot1Damage>())
-			{
-				float dmgAmount1 = obj.GetComponent<Shot1Damage>().damage;
-				if((healthAmount - dmgAmount1) <= 0f)
+				if(obj.GetComponent<Shot1Damage>())
 				{
-					DestroyThis ();
-				}else
+					float dmgAmount1 = obj.GetComponent<Shot1Damage>().damage;
+					if((healthAmount - dmgAmount1) <= 0f)
+					{
+						DestroyThis ();
+					}else
+					{
+						healthAmount -= dmgAmount1;
+					}
+				}else if(obj.GetComponent<Shot2Damage>())
 				{
-					healthAmount -= dmgAmount1;
+					float dmgAmount2 = obj.GetComponent<Shot2Damage>().damage;
+					if((healthAmount - dmgAmount2) <= 0f)
+					{
+						DestroyThis ();
+					}else
+					{
+						healthAmount -= dmgAmount2;
+					}
+				}else if(obj.GetComponent<BlueParticleDamage>())
+				{
+					float dmgAmount3 = obj.GetComponent<BlueParticleDamage>().damage;
+					if((healthAmount - dmgAmount3) <= 0f)
+					{
+						DestroyThis ();
+					}else
+					{
+						healthAmount -= dmgAmount3;
+					}
 				}
-			}else if(obj.GetComponent<Shot2Damage>())
+			}else if(obj.name == "gundam_sword")
 			{
-				float dmgAmount2 = obj.GetComponent<Shot2Damage>().damage;
-				if((healthAmount - dmgAmount2) <= 0f)
+				if(obj.GetComponent<SwordDamage>())
 				{
-					DestroyThis ();
-				}else
-				{
-					healthAmount -= dmgAmount2;
-				}
-			}else if(obj.GetComponent<BlueParticleDamage>())
-			{
-				float dmgAmount3 = obj.GetComponent<BlueParticleDamage>().damage;
-				if((healthAmount - dmgAmount3) <= 0f)
-				{
-					DestroyThis ();
-				}else
-				{
-					healthAmount -= dmgAmount3;
-				}
-			}
-		}else if(obj.name == "gundam_sword")
-		{
-			if(obj.GetComponent<SwordDamage>())
-			{
-				Debug.Log("SWORD HIT ME!!!");
-				float dmgAmount1 = obj.GetComponent<SwordDamage>().damage;
-				if((healthAmount - dmgAmount1) <= 0f)
-				{
-					DestroyThis ();
-				}else
-				{
-					healthAmount -= dmgAmount1;
+					Debug.Log("SWORD HIT ME!!!");
+					float dmgAmount1 = obj.GetComponent<SwordDamage>().damage;
+					if((healthAmount - dmgAmount1) <= 0f)
+					{
+						DestroyThis ();
+					}else
+					{
+						healthAmount -= dmgAmount1;
+					}
 				}
 			}
 		}
@@ -90,15 +94,17 @@ public class damageDetection : MonoBehaviour {
 	{
 		if(this.name == "PA_ArchfireTank(Clone)")
 		{
+			Instantiate(theExplosion,gameObject.transform.position,Quaternion.identity);
 			Destroy (gameObject);
 		}else if(this.name == "PA_DropPod(Clone)")
 		{
+			Instantiate(theExplosion,gameObject.transform.position,Quaternion.identity);
 			Destroy (gameObject);
 
 		}else if(this.name == "PA_ArchlightBomber(Clone)")
 		{
+			Instantiate(theExplosion,gameObject.transform.position,Quaternion.identity);
 			Destroy (gameObject);
-
 		}
 	}
 }
