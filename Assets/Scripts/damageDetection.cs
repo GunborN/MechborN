@@ -8,6 +8,9 @@ public class damageDetection : MonoBehaviour {
 	private GameObject scoreObject;
 	private GameObject healthBar;
 
+	public GameObject gameOver;
+	public GameObject escapeMenu;
+
 	void Start () 
 	{
 		healthAmount = 100f;
@@ -137,9 +140,9 @@ public class damageDetection : MonoBehaviour {
 		if(this.tag == "Player")
 		{
 			Instantiate(theExplosion,gameObject.transform.position,Quaternion.identity);
-			//GameObject.FindGameObjectWithTag("Game Over").SetActive(true);
-			//GameObject.Find("EscapeMenu").SetActive(true);
-			//GameObject.FindGameObjectWithTag("MainCamera").GetComponent<LookatTarget>();
+			gameOver.SetActive(true);
+			escapeMenu.SetActive(true);
+			Cursor.visible = true;
 			GameObject.Find ("SlantBar").GetComponent<GUIBarScript>().Value = 0;
 			Destroy (gameObject);
 		}

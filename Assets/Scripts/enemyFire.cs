@@ -32,7 +32,7 @@ public class enemyFire : MonoBehaviour {
 		shooting = true;
 		GameObject shot = Instantiate(shotName,trans.transform.position,transform.rotation) as GameObject;
 		shot.GetComponent<EffectSettings>().Target = GameObject.FindGameObjectWithTag("Player");
-		yield return new WaitForSeconds(1.2f);
+		yield return new WaitForSeconds(2f);
 		shooting = false;
 	}
 }
