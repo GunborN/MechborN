@@ -95,8 +95,9 @@ public class ProjectileCollisionBehaviour : MonoBehaviour
     
     tRoot = IsRootMove ? effectSettings.transform : transform.parent;
     startPosition = tRoot.position;
-
-    tTarget = effectSettings.Target.transform;
+	
+	if(GameObject.FindGameObjectWithTag("Player"))
+    	tTarget = effectSettings.Target.transform;
     if (effectSettings.EffectRadius > 0.001)
     {
       var rand = Random.insideUnitCircle * effectSettings.EffectRadius;

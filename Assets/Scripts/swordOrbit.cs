@@ -81,7 +81,8 @@ public class swordOrbit : MonoBehaviour {
 	
 	void FixedUpdate () 
 	{
-		transform.position = mech.position;
+		if(GameObject.FindGameObjectWithTag("Player"))
+			transform.position = mech.position;
 	}
 
 	IEnumerator SwingSwordLeft()

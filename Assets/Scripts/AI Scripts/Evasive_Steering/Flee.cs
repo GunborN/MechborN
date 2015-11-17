@@ -20,18 +20,21 @@ public class Flee : MonoBehaviour
 
     void Update()
     {
-        targetPosition = new Vector3(player.transform.position.x,player.transform.position.y,0.0f);
-
-		if(dontFlee)
+		if(GameObject.FindGameObjectWithTag("Player"))
 		{
-        	newPosition = Vector3.MoveTowards(transform.position, player.transform.position, MoveSpeed * Time.deltaTime);
-		}else{
-			newPosition = Vector3.MoveTowards(transform.position, player.transform.position, -MoveSpeed * Time.deltaTime);
-		}
+	        targetPosition = new Vector3(player.transform.position.x,player.transform.position.y,0.0f);
 
-        transform.position = newPosition;
-		transform.position = new Vector3(newPosition.x,newPosition.y,2.0f);
-		transform.LookAt (targetPosition);
+			if(dontFlee)
+			{
+	        	newPosition = Vector3.MoveTowards(transform.position, player.transform.position, MoveSpeed * Time.deltaTime);
+			}else{
+				newPosition = Vector3.MoveTowards(transform.position, player.transform.position, -MoveSpeed * Time.deltaTime);
+			}
+
+	        transform.position = newPosition;
+			transform.position = new Vector3(newPosition.x,newPosition.y,2.0f);
+			transform.LookAt (targetPosition);
+		}
     }
 //	private Vector3 Separation (GameObject boid)
 //	{

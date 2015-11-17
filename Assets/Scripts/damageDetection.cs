@@ -5,10 +5,18 @@ public class damageDetection : MonoBehaviour {
 
 	public float healthAmount;
 	public GameObject theExplosion;
+	private GameObject scoreObject;
+	private GameObject healthBar;
 
 	void Start () 
 	{
 		healthAmount = 100f;
+		scoreObject = GameObject.Find ("TheScore");
+		if(gameObject.tag == "Player")
+		{
+			healthBar = GameObject.Find("SlantBar");
+			healthAmount = 1f;
+		}
 	}
 	
 	void Update () 
@@ -18,7 +26,22 @@ public class damageDetection : MonoBehaviour {
 
 	void OnCollisionEnter(Collision obj)
 	{
-		//Debug.Log (obj.gameObject.name);
+//		if(obj.gameObject.name == "EnemyShot1(Clone)" && this.gameObject.tag == "Player")
+//		{
+//			if(obj.gameObject.GetComponent<EnemyShot1Damage>())
+//			{
+//				float dmgAmount1 = obj.gameObject.GetComponent<EnemyShot1Damage>().damage;
+//				if((healthAmount - dmgAmount1) <= 0f)
+//				{
+//					DestroyThis ();
+//				}else
+//				{
+//					healthAmount -= dmgAmount1;
+//					GameObject.Find ("SlantBar").GetComponent<GUIBarScript>().Value = healthAmount;
+//				}
+//			}
+//		}
+
 		if(obj.gameObject.layer == LayerMask.NameToLayer("Shield"))
 		{
 			//Debug.Log ("HIT SHIELD!!!***");
@@ -38,7 +61,25 @@ public class damageDetection : MonoBehaviour {
 		{
 			if(obj.name == "Explosion")
 			{
-				//Debug.Log(obj.name);
+				if(this.gameObject.tag == "Player")
+				{
+					//Debug.Log("GOT HERE!!!!!!!");
+					if(obj.gameObject.GetComponent<EnemyShot1Damage>())
+					{
+						Debug.Log("GOT HERE!!!!!!!");
+
+						float dmgAmount1 = obj.gameObject.GetComponent<EnemyShot1Damage>().damage;
+						if((healthAmount - dmgAmount1) <= 0f)
+						{
+							DestroyThis ();
+						}else
+						{
+							healthAmount -= dmgAmount1;
+							GameObject.Find ("SlantBar").GetComponent<GUIBarScript>().Value = healthAmount;
+						}
+					}
+				}
+
 				obj.GetComponent<SphereCollider>().enabled = false;
 
 				if(obj.GetComponent<Shot1Damage>())
@@ -92,18 +133,31 @@ public class damageDetection : MonoBehaviour {
 
 	void DestroyThis()
 	{
-		if(this.name == "PA_ArchfireTank(Clone)")
+
+		if(this.tag == "Player")
 		{
 			Instantiate(theExplosion,gameObject.transform.position,Quaternion.identity);
+			//GameObject.FindGameObjectWithTag("Game Over").SetActive(true);
+			//GameObject.Find("EscapeMenu").SetActive(true);
+			//GameObject.FindGameObjectWithTag("MainCamera").GetComponent<LookatTarget>();
+			GameObject.Find ("SlantBar").GetComponent<GUIBarScript>().Value = 0;
+			Destroy (gameObject);
+		}
+		else if(this.name == "PA_ArchfireTank(Clone)")
+		{
+			Instantiate(theExplosion,gameObject.transform.position,Quaternion.identity);
+			scoreObject.SendMessage("UpdateScore",20,SendMessageOptions.RequireReceiver);
 			Destroy (gameObject);
 		}else if(this.name == "PA_DropPod(Clone)")
 		{
 			Instantiate(theExplosion,gameObject.transform.position,Quaternion.identity);
+			scoreObject.SendMessage("UpdateScore",10,SendMessageOptions.RequireReceiver);
 			Destroy (gameObject);
 
 		}else if(this.name == "PA_ArchlightBomber(Clone)")
 		{
 			Instantiate(theExplosion,gameObject.transform.position,Quaternion.identity);
+			scoreObject.SendMessage("UpdateScore",30,SendMessageOptions.RequireReceiver);
 			Destroy (gameObject);
 		}
 	}

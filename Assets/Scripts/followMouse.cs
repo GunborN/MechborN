@@ -21,9 +21,12 @@ public class followMouse : MonoBehaviour {
 	
 	void FixedUpdate () {
 		//transform.position = Vector3.Lerp (transform.position,mech.position,.1f);
-		transform.position = mech.position;
+		if(GameObject.FindGameObjectWithTag("Player"))
+		{
+			transform.position = mech.position;
 
-		transform.LookAt (target.position);
+			transform.LookAt (target.position);
+		}
 		//transform.rotation = Quaternion.Euler(transform.rotation.x + 29f,transform.rotation.y,transform.rotation.z);
 		//transform.rotation = Quaternion.Euler(transform.eulerAngles.x + 29f,transform.eulerAngles.y,transform.eulerAngles.z);
 
