@@ -69,7 +69,7 @@ public class damageDetection : MonoBehaviour {
 					//Debug.Log("GOT HERE!!!!!!!");
 					if(obj.gameObject.GetComponent<EnemyShot1Damage>())
 					{
-						Debug.Log("GOT HERE!!!!!!!");
+						//Debug.Log("GOT HERE!!!!!!!");
 
 						float dmgAmount1 = obj.gameObject.GetComponent<EnemyShot1Damage>().damage;
 						if((healthAmount - dmgAmount1) <= 0f)
